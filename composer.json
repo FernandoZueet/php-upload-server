@@ -1,0 +1,30 @@
+{
+    "name": "fernandozueet/php-upload-server",
+    "type": "library",
+    "description": "Upload and manipulation image, crop, resize, watermarks, filters, flip, rotate, image text and gamma correct",
+    "keywords": ["upload", "image", "crop", "resize", "watermaks image", "image manipulation"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Fernando Zueet",
+        "email": "fernandozueet@hotmail.com",
+        "homepage": "https://github.com/FernandoZueet"
+    }],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*",
+        "phpunit/dbunit": ">=1.2",
+        "phpunit/phpunit-selenium": ">=1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "FzUpload\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
