@@ -59,6 +59,11 @@ class File
     {
         $this->fileMounted[$pos]['name'] = $value;
         $this->fileMounted[$pos]['completeName'] = $value.'.'.$this->fileMounted[$pos]['extension'];
+
+        if(isset($this->fileName)) {
+            $this->fileMounted[$pos]['newName'] = $this->fileName;
+            $this->fileMounted[$pos]['newCompleteName'] = $this->fileName.'.'.$this->fileMounted[$pos]['extension'];
+        }
     }
 
     /**
@@ -341,6 +346,26 @@ class File
     /*-------------------------------------------------------------------------------------
     * General methods
     *-------------------------------------------------------------------------------------*/
+
+    /**
+     * File name
+     * 
+     * @var string
+     */
+    private $fileName;
+
+    /**
+     * Set file name
+     *
+     * @param string $fileName
+     * @return File
+     */
+    public function setFileName(string $fileName) : File
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+    }
 
     /**
      * Get file content type

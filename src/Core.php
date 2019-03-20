@@ -190,6 +190,16 @@ class Core extends File
         return $this;
     }
 
+    /**
+     * Get save files
+     *
+     * @return array
+     */
+    public function getSavedFiles() : array
+    {
+        return $this->savedFiles;
+    }
+
     /*-------------------------------------------------------------------------------------
     * General methods
     *-------------------------------------------------------------------------------------*/
@@ -250,8 +260,6 @@ class Core extends File
             $total = $totalSaveDirectory * count($this->getFile());
         }
         if($total == $executes) {
-            $this->resetConfigsSaveLocal();
-
             return true;
 
         //save error
@@ -260,16 +268,6 @@ class Core extends File
 
             return false;
         }
-    }
-
-    /**
-     * Reset configs save local
-     *
-     * @return void
-     */
-    private function resetConfigsSaveLocal()
-    {
-        $this->savedFiles = [];
     }
 
     /**
@@ -300,6 +298,8 @@ class Core extends File
     {
         if($this->originalName) {
             $fileName = $saveImageAs ? $file['name'].'.'.$saveImageAs : $file['completeName'];
+        }else if(isset($file['newName'])) {
+            $fileName = $saveImageAs ? $file['newName'].'.'.$saveImageAs : $file['newCompleteName'];
         }else{
             $fileName = $saveImageAs ? $file['randomName'].'.'.$saveImageAs : $file['completeRandomName'];
         }

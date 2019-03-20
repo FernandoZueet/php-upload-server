@@ -135,6 +135,12 @@ array:2 [
 //lib instance
 $upload = new FzUpload\Core();
 
+//custom name (optional)
+//$upload->setFileName('newName');
+
+//original name files (optional)
+//$upload->setOriginalName();
+
 //set file
 $upload->setFile(['https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png']);
 
@@ -147,15 +153,15 @@ $upload->setSaveDirectory(["C:\\teste\p","C:\\teste\m"]);
 //save image as. Possible values: (jpg|quality - 0 to 100, png|quality - 0 to 100, gif, webp|quality - 0 to 100)
 $upload->setSaveImageAs(['jpg|100','png|100','gif','webp|100']);
 
-//original name files (optional)
-//$upload->setOriginalName();
-
 //upload files
 $upload->uploadFile();
 
 //save file to local server
 if($upload->saveLocal()) {
-    //success
+
+    //files uploaded
+    $filesUploaded = $upload->getSavedFiles();
+
 }else{
     //error
 }
