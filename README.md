@@ -665,7 +665,7 @@ if($upload->saveLocal()) {
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/FernandoZueet/upload-and-image-manipulation/graphs/contributors) for details.
+Please see [CONTRIBUTING](https://github.com/FernandoZueet/php-upload-server/graphs/contributors) for details.
 
 ## Security
 
