@@ -130,19 +130,25 @@ class ImageGd
      * Image adjustments
      *
      * @param resource $image
+     * @param string $mimeType
      * @return boolean
      */
-    public function imageAdjustments($image = null) : bool
+    public function imageAdjustments($image = null, string $mimeType = '') : bool
     {
         if ($image == null) {
             $image = $this->imageResource;
+        }
+
+        $blendmode = true;
+        if($mimeType == 'image/png') {
+            $blendmode = false;
         }
         
         if(!imagepalettetotruecolor($image)) {
             return false;
         };
 
-        if(!imagealphablending($image, true)) {
+        if(!imagealphablending($image, $blendmode)) {
             return false;
         }
 

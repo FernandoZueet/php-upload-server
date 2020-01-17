@@ -141,7 +141,7 @@ class WatermarksImage extends Save
         }
 
         //image adjustments
-        if (!$this->getImageGd()->imageAdjustments($image)) {
+        if (!$this->getImageGd()->imageAdjustments($image, $this->getFile()['mimeType'])) {
             return false;
         }
       

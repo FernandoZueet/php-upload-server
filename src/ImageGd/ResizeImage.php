@@ -137,7 +137,7 @@ class ResizeImage extends Save
         $imageDst = imagecreatetruecolor($width, $height);
 
         //image adjustments
-        if (!$this->getImageGd()->imageAdjustments($imageDst)) {
+        if (!$this->getImageGd()->imageAdjustments($imageDst, $this->getFile()['mimeType'])) {
             return false;
         }
 
