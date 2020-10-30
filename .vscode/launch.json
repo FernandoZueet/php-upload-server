@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "log": true,
+            "name": "XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9002,
+            "pathMappings": {
+                "/var/www/html": "${workspaceRoot}"
+            },
+            "ignore": [
+                 "**/vendor/**/*.php"
+             ],
+             "hostname": "localhost"
+          }
+        ]
+}

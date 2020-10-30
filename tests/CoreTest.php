@@ -4,7 +4,7 @@
  * This file is part of the FzUpload package
  *
  * @link http://github.com/fernandozueet/php-upload-server
- * @copyright 2019
+ * @copyright 2020
  * @license MIT License
  * @author Fernando Zueet <fernandozueet@hotmail.com>
  */
@@ -12,9 +12,11 @@
 namespace Tests;
 
 use FzUpload\Core;
+use PHPUnit\Framework\TestCase;
 
-class CoreTest extends \PHPUnit_Framework_TestCase
+class CoreTest extends TestCase
 {
+
     public function upload()
     {
         //lib instance
